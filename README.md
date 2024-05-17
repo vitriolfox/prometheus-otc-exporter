@@ -1,6 +1,3 @@
-[![Apache 2.0 License](http://img.shields.io/badge/license-Apache%202.0-green.svg?style=flat)](LICENSE) [![Prometheus OTC Exporter](https://img.shields.io/badge/prometheus-OTC%20CloudEye%20Exporter-red.svg?style=flat)](https://prometheus.io/docs/instrumenting/exporters/#other-monitoring-systems) [![Kanban board](https://img.shields.io/badge/kanban-Trello-blue.svg?style=flat)](https://trello.com/b/IgXJprlt) 
-
-
 # OTC CloudEye Prometheus Exporter
 Prometheus exporter that gather metrics from Open Telekom Cloud resources over Cloud Eye API
 
@@ -25,14 +22,14 @@ version: '3'
 services:
   otc-exporter:
     restart: always
-    image: tiagoreichert/otc-cloudeye-prometheus-exporter
+    image: vitriolfox/otc-cloudeye-prometheus-exporter
     ports:
       - "8000:8000"
     environment:
       - REFRESH_TIME=300
       - NAMESPACES=ECS,DMS,RDS
       - PROJECT_ID=<projectid>
-      - TENANT_NAME=OTC-EU-DE-<tentantnumber>
+      - TENANT_NAME=OTC-EU-DE-<tenantnumber>
       - USERNAME=foo
       - PASSWORD=bar
       - LOG_LEVEL=DEBUG
