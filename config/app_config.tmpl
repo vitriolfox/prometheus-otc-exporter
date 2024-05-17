@@ -1,0 +1,51 @@
+[EXPORTER_CONFIG]
+refresh_time={{ .Env.REFRESH_TIME }}
+namespaces={{ .Env.NAMESPACES }}
+
+[OTC_CREDENTIALS]
+project_id = {{ .Env.PROJECT_ID }}
+tenant_name = {{ .Env.TENANT_NAME }}
+username = {{ .Env.USERNAME }}
+password = {{ .Env.PASSWORD }}
+
+[OTC_ENDPOINTS]
+request_token = https://iam.eu-de.otc.t-systems.com/v3/auth/tokens
+cloud_eye_base = https://ces.eu-de.otc.t-systems.com/V1.0/${OTC_CREDENTIALS:project_id}/metric-data
+available_metrics = https://ces.eu-de.otc.t-systems.com/V1.0/${OTC_CREDENTIALS:project_id}/metrics
+ecs_names = https://ecs.eu-de.otc.t-systems.com/v2.1/${OTC_CREDENTIALS:project_id}/servers
+dms_names = https://dms.eu-de.otc.t-systems.com/v1.0/${OTC_CREDENTIALS:project_id}/queues?include_deadletter=true
+dms_consumer_names = https://dms.eu-de.otc.t-systems.com/v1.0/${OTC_CREDENTIALS:project_id}/queues/<queue_id>/groups?include_deadletter=true
+rds_names = https://rds.eu-de.otc.t-systems.com/rds/v1/${OTC_CREDENTIALS:project_id}/instances
+elb_names = https://elb.eu-de.otc.t-systems.com/v2.0/lbaas/loadbalancers
+nat_names = https://nat.eu-de.otc.t-systems.com/v2.0/nat_gateways
+
+[JSON_REQUEST]
+token =  {
+  "auth": {
+   "identity": {
+    "methods": ["password"],
+    "password": {
+     "user": {
+      "domain": { "name": "${OTC_CREDENTIALS:tenant_name}" },
+      "name": "${OTC_CREDENTIALS:username}",
+      "password": "${OTC_CREDENTIALS:password}"
+     }
+    }
+   },
+   "scope": {
+    "project": {
+     "id": "${OTC_CREDENTIALS:project_id}"
+    }
+   }
+  }
+ }
+
+[ECS_IDS]
+
+[DMS_IDS]
+
+[RDS_IDS]
+
+[ELB_IDS]
+
+[NAT_IDS]
