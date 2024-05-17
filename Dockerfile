@@ -1,7 +1,5 @@
 FROM python:2.7-alpine
 
-LABEL maintainer "tiago@reichert.eti.br"
-
 COPY requirements.txt /app/
 
 RUN pip install --upgrade pip

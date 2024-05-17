@@ -2,12 +2,7 @@
 # coding=utf-8
 # -------------------------------------------------------------
 #       OTC CloudEye Prometheus Exporter
-#
-#       Author: Tiago M Reichert
-#       Initial Release: 04/08/2018
-#       Email: tiago@reichert.eti.br
-#       Version: v0.2a
-#       Contributor: Johannes Grumboeck <johannes@grumboeck.net>
+#       forked from https://github.com/tiagoReichert/otc-cloudeye-prometheus-exporter
 # --------------------------------------------------------------
 import requests
 import json
