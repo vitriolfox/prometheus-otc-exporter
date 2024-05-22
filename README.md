@@ -1,4 +1,4 @@
-# OTC CloudEye Prometheus Exporter
+# Prometheus OTC Exporter
 Prometheus exporter that gather metrics from Open Telekom Cloud resources over Cloud Eye API
 
 ### Environment Variables
